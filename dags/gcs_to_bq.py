@@ -1,4 +1,7 @@
 import os
+from google.cloud import storage
+from urllib.request import urlretrieve
+from datetime import datetime
 
 from airflow import DAG
 from airflow.utils.dates import days_ago
@@ -7,10 +10,6 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator
 from airflow.utils.helpers import chain
-
-from google.cloud import storage
-from urllib.request import urlretrieve
-from datetime import datetime
 
 # Environment variables set at the airflow workers level
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
