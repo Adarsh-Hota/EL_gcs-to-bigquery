@@ -4,6 +4,7 @@ from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.utils.helpers import chain
 
 from google.cloud import storage
@@ -64,6 +65,10 @@ with DAG(
     tags=['gcs-to-bq']
 ) as dag:
 
+    start_pipeline = EmptyOperator(
+        task_id='start_pipeline',
+    )
+
     local_to_gcs_task = PythonOperator(
         task_id="local_to_gcs_task",
         python_callable=upload_to_gcs,
@@ -90,4 +95,8 @@ with DAG(
         },
     )
 
-    local_to_gcs_task >> bigquery_external_table_task 
+    end_pipeline = EmptyOperator(
+        task_id='end_pipeline',
+    )
+
+    start_pipeline >> local_to_gcs_task >> bigquery_external_table_task >> end_pipeline 
