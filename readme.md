@@ -2,7 +2,9 @@ An EL data pipeline that leverages the capabilities of Apache Airflow to extract
 
 <table>
   <tr>
-    <td>![Project Overview](/docs/images/project_overview.png)</td>
+    <td>
+        ![Project Overview](docs/images/project_overview.png)
+    </td>
   </tr>
 </table>
 
