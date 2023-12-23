@@ -18,8 +18,9 @@ An EL data pipeline that leverages the capabilities of Apache Airflow to extract
   - Boot disk image: ubuntu-2004-focal-v20230918
   - Boot disk size: 30 GB
   - Boot disk type: Balanced persistent disk
-+ Apache Airflow: 2.7.2
-+ Docker Compose version: 3
+  - Apache Airflow: 2.7.2
+  - Docker version: 24.0.6
+  - Docker Compose version: 3
   
 ## Data Source
 NYC Taxi & Limousine Commission website - https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
