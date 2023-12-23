@@ -15,6 +15,9 @@ An EL data pipeline that leverages the capabilities of Apache Airflow to extract
 
 + GCP Compute Engine VM 
   - Machine type: e2-standard-4
+  - Boot disk image: ubuntu-2004-focal-v20230918
+  - Boot disk size: 30 GB
+  - Boot disk type: Balanced persistent disk
 + Apache Airflow: 2.7.2
 + Docker Compose version: 3
   
