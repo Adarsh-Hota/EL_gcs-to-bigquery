@@ -14,7 +14,7 @@ An EL data pipeline that leverages the capabilities of Apache Airflow to extract
 ## Environment
 
 + GCP Compute Engine VM 
-+ - Machine type: e2-standard-4
+  - Machine type: e2-standard-4
 + Apache Airflow: 2.7.2
 + Docker Compose version: 3
   
